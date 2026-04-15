@@ -1,0 +1,31 @@
+body {
+    background-color: #eeeeee;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: black;
+    margin: 30px;
+}
+
+h1 {
+    margin: 20px;
+    padding: 10px;
+    color: black;
+}
+
+.box {
+    width: 500px;
+    height: 420px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    background-color: white;
+    text-align: left;
+}
+
+input, select {
+    width: 220px;
+    height: 30px;
+    margin: 5px;
+    font-size: 16px;
+}
