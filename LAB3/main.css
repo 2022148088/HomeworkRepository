@@ -1,0 +1,286 @@
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: black;
+}
+
+.page {
+    width: 1020px;
+    margin: 0 auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.title-area {
+    width: 980px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-top: 4px solid red;
+    padding-top: 20px;
+}
+
+.title-box {
+    width: 420px;
+    position: relative;
+    left: 0px;
+    animation-name: slideTitle;
+    animation-duration: 2s;
+}
+
+@keyframes slideTitle {
+    from { left: 600px; }
+    to { left: 0px; }
+}
+
+.nav-bar {
+    width: 980px;
+    margin: 10px auto 20px auto;
+    padding: 10px 0px 10px 0px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: black;
+    margin-left: 15px;
+    margin-right: 15px;
+    flex-grow: 1;
+}
+
+.main-content {
+    width: 980px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.movies-section {
+    width: 958px;
+    border: 2px solid purple;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.movies-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movie-box {
+    width: 210px;
+    border: 1px solid gray;
+    padding: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 260px;
+}
+
+.poster-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.poster-wrap {
+    width: 95px;
+    height: 140px;
+    position: relative;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.poster-wrap img {
+    width: 95px;
+    height: 140px;
+    transition: transform 2s;
+}
+
+.poster-wrap img:hover {
+    transform: scale(1.2);
+}
+
+.poster-title {
+    width: 95px;
+    position: absolute;
+    top: 55px;
+    left: 0px;
+    background-color: black;
+    color: white;
+    text-align: center;
+    display: none;
+}
+
+.special-poster:hover .poster-title {
+    display: block;
+}
+
+.about-section {
+    width: 958px;
+    border: 2px solid purple;
+    padding: 10px;
+}
+
+.about-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.about-text {
+    width: 460px;
+}
+
+.form-box {
+    width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid black;
+    background-color: white;
+    text-align: left;
+}
+
+.form-box input,
+.form-box select {
+    width: 220px;
+    height: 30px;
+    font-size: 16px;
+}
+
+.form-box p {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* ~480px */
+@media screen and (max-width: 480px) {
+    .page {
+        width: 460px;
+    }
+
+    .title-area {
+        width: 420px;
+    }
+
+    .nav-bar {
+        width: 420px;
+        flex-direction: column;
+    }
+
+    .main-content {
+        width: 420px;
+    }
+
+    .movies-section {
+        width: 398px;
+    }
+
+    .movies-row {
+        flex-direction: column;
+    }
+
+    .movie-box {
+        width: 380px;
+        height: 240px;
+    }
+
+    .about-section {
+        width: 398px;
+    }
+
+    .about-row {
+        flex-direction: column;
+    }
+
+    .about-text {
+        width: 380px;
+        margin-bottom: 10px;
+    }
+
+    .form-box {
+        width: 380px;
+    }
+}
+
+/* 481px ~ 800px */
+@media screen and (min-width: 481px) and (max-width: 800px) {
+    .page {
+        width: 760px;
+    }
+
+    .title-area {
+        width: 720px;
+    }
+
+    .nav-bar {
+        width: 720px;
+        flex-direction: column;
+    }
+
+    .main-content {
+        width: 720px;
+    }
+
+    .movies-section {
+        width: 698px;
+    }
+
+    .movie-box {
+        width: 320px;
+        height: 250px;
+    }
+
+    .about-section {
+        width: 698px;
+    }
+
+    .about-row {
+        flex-direction: column;
+    }
+
+    .about-text {
+        width: 680px;
+        margin-bottom: 10px;
+    }
+
+    .form-box {
+        width: 480px;
+    }
+}
+
+/* 801px ~ */
+@media screen and (min-width: 801px) {
+    .page {
+        width: 1020px;
+    }
+
+    .title-area {
+        width: 980px;
+    }
+
+    .nav-bar {
+        width: 980px;
+        flex-direction: row;
+    }
+
+    .main-content {
+        width: 980px;
+    }
+
+    .movies-section {
+        width: 958px;
+    }
+
+    .about-section {
+        width: 958px;
+    }
+}
