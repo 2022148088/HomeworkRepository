@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>LAB4 Movie Site</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+    <div class="page">
+        <header class="site-header">
+            <h1>인프밍 영화 정보 사이트입니다.</h1>
+
+            <nav class="nav-links">
+                <a href="index.html">메인페이지</a>
+                <a href="login.html">로그인</a>
+                <a href="signup.html">회원가입</a>
+            </nav>
+        </header>
+
+        <section class="search-section">
+            <input type="text" id="keywordInput" placeholder="키워드를 입력하세요.">
+            <button id="filterButton">Filter results</button>
+        </section>
+
+        <section class="movies-section">
+            <h2>Movies</h2>
+
+            <div class="movies-layout">
+                <aside class="sort-box">
+                    <h3>정렬 기준</h3>
+
+                    <label>
+                        <input type="radio" name="sort" value="ratingDesc" checked>
+                        평점 내림차순
+                    </label>
+
+                    <label>
+                        <input type="radio" name="sort" value="ratingAsc">
+                        평점 오름차순
+                    </label>
+
+                    <label>
+                        <input type="radio" name="sort" value="releaseDesc">
+                        개봉 내림차순
+                    </label>
+
+                    <label>
+                        <input type="radio" name="sort" value="releaseAsc">
+                        개봉 오름차순
+                    </label>
+                </aside>
+
+                <div class="movie-grid-area">
+                    <div id="movieGrid" class="movie-grid"></div>
+                    <p id="emptyMessage" class="empty-message"></p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        var allMovies = [];
+        var filteredMovies = [];
+        var visibleCount = 0;
+        var batchSize = 6;
+        var currentSort = "ratingDesc";
+
+        function normalizeText(text) {
+            if (!text) {
+                return "";
+            }
+            return text.toLowerCase();
+        }
+
+        function sortMovies(list) {
+            var copied = list.slice();
+
+            copied.sort(function (a, b) {
+                if (currentSort === "ratingDesc") {
+                    return b.vote_average - a.vote_average;
+                }
+                if (currentSort === "ratingAsc") {
+                    return a.vote_average - b.vote_average;
+                }
+                if (currentSort === "releaseDesc") {
+                    return new Date(b.release_date) - new Date(a.release_date);
+                }
+                if (currentSort === "releaseAsc") {
+                    return new Date(a.release_date) - new Date(b.release_date);
+                }
+                return 0;
+            });
+
+            return copied;
+        }
+
+        function createMovieCard(movie) {
+            var card = document.createElement("div");
+            card.className = "movie-card";
+
+            card.innerHTML =
+                '<div class="poster-box">' +
+                    '<img src="' + movie.poster + '" alt="' + movie.title + ' poster">' +
+                    '<div class="overview-box">' +
+                        '<strong>줄거리:</strong><br>' + movie.overview +
+                    '</div>' +
+                '</div>' +
+                '<div class="movie-info">' +
+                    '<h3>' + movie.title + '</h3>' +
+                    '<p>개봉일: ' + movie.release_date + '</p>' +
+                    '<p>평점: ' + movie.vote_average + '</p>' +
+                    '<p>장르: ' + movie.genre + '</p>' +
+                '</div>';
+
+            return card;
+        }
+
+        function renderNextBatch() {
+            var movieGrid = document.getElementById("movieGrid");
+            var emptyMessage = document.getElementById("emptyMessage");
+
+            if (visibleCount === 0) {
+                movieGrid.innerHTML = "";
+            }
+
+            if (filteredMovies.length === 0) {
+                emptyMessage.textContent = "검색 결과가 없습니다.";
+                return;
+            } else {
+                emptyMessage.textContent = "";
+            }
+
+            var nextMovies = filteredMovies.slice(visibleCount, visibleCount + batchSize);
+
+            for (var i = 0; i < nextMovies.length; i++) {
+                movieGrid.appendChild(createMovieCard(nextMovies[i]));
+            }
+
+            visibleCount += nextMovies.length;
+        }
+
+        function applyFilters(reset) {
+            var keyword = normalizeText(document.getElementById("keywordInput").value);
+
+            filteredMovies = allMovies.filter(function (movie) {
+                var title = normalizeText(movie.title);
+                var overview = normalizeText(movie.overview);
+                var genre = normalizeText(movie.genre);
+
+                return title.indexOf(keyword) !== -1 ||
+                       overview.indexOf(keyword) !== -1 ||
+                       genre.indexOf(keyword) !== -1;
+            });
+
+            filteredMovies = sortMovies(filteredMovies);
+
+            if (reset) {
+                visibleCount = 0;
+                document.getElementById("movieGrid").innerHTML = "";
+                renderNextBatch();
+            }
+        }
+
+        function loadMovies() {
+            fetch("product.json")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    allMovies = data;
+                    applyFilters(true);
+                })
+                .catch(function () {
+                    document.getElementById("emptyMessage").textContent =
+                        "product.json 파일을 불러오지 못했습니다.";
+                });
+        }
+
+        document.getElementById("filterButton").addEventListener("click", function () {
+            applyFilters(true);
+        });
+
+        document.getElementById("keywordInput").addEventListener("keydown", function (event) {
+            if (event.key === "Enter") {
+                applyFilters(true);
+            }
+        });
+
+        var sortRadios = document.getElementsByName("sort");
+        for (var i = 0; i < sortRadios.length; i++) {
+            sortRadios[i].addEventListener("change", function () {
+                currentSort = this.value;
+                applyFilters(true);
+            });
+        }
+
+        window.addEventListener("scroll", function () {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 100) {
+                if (visibleCount < filteredMovies.length) {
+                    renderNextBatch();
+                }
+            }
+        });
+
+        loadMovies();
+    </script>
+</body>
+</html>
