@@ -1,0 +1,162 @@
+[
+  {
+    "title": "Inception",
+    "release_date": "2010-07-16",
+    "vote_average": 8.3,
+    "genre": "SF",
+    "overview": "A skilled thief enters other people's dreams to steal secrets, but he is given a final mission that requires planting an idea instead.",
+    "poster": "images/inception.jpg"
+  },
+  {
+    "title": "Interstellar",
+    "release_date": "2014-11-07",
+    "vote_average": 8.4,
+    "genre": "SF",
+    "overview": "A team of explorers travels through a wormhole in space to search for a new home for humanity as Earth becomes less habitable.",
+    "poster": "images/interstellar.jpg"
+  },
+  {
+    "title": "Transcendence",
+    "release_date": "2014-04-18",
+    "vote_average": 6.2,
+    "genre": "SF",
+    "overview": "A scientist's mind is uploaded into a machine, creating an intelligence that grows beyond human control and raises ethical questions.",
+    "poster": "images/transcendence.jpg"
+  },
+  {
+    "title": "Edge of Tomorrow",
+    "release_date": "2014-06-06",
+    "vote_average": 7.6,
+    "genre": "Action",
+    "overview": "A soldier trapped in a time loop relives the same battle against alien invaders and gradually becomes a powerful warrior.",
+    "poster": "images/edge_of_tomorrow.jpg"
+  },
+  {
+    "title": "The Dark Knight",
+    "release_date": "2008-07-18",
+    "vote_average": 8.5,
+    "genre": "Action",
+    "overview": "Batman faces the Joker, a criminal mastermind who pushes Gotham into chaos and forces difficult moral choices.",
+    "poster": "images/dark_knight.jpg"
+  },
+  {
+    "title": "The Matrix",
+    "release_date": "1999-03-31",
+    "vote_average": 8.1,
+    "genre": "SF",
+    "overview": "A hacker discovers that reality is a simulation and joins a rebellion against the machines controlling humanity.",
+    "poster": "images/The Matrix.jpg"
+  },
+  {
+    "title": "Arrival",
+    "release_date": "2016-11-11",
+    "vote_average": 7.5,
+    "genre": "SF",
+    "overview": "A linguist is recruited to communicate with mysterious alien visitors whose arrival may change humanity's understanding of time.",
+    "poster": "images/Arrival.jpg"
+  },
+  {
+    "title": "Gravity",
+    "release_date": "2013-10-04",
+    "vote_average": 7.2,
+    "genre": "SF",
+    "overview": "Two astronauts struggle to survive after a disaster leaves them drifting in space with limited resources.",
+    "poster": "images/Gravity.jpg"
+  },
+  {
+    "title": "The Martian",
+    "release_date": "2015-10-02",
+    "vote_average": 7.8,
+    "genre": "SF",
+    "overview": "An astronaut stranded on Mars uses science and determination to survive while NASA works on a rescue plan.",
+    "poster": "images/The Martian.jpg"
+  },
+  {
+    "title": "Blade Runner 2049",
+    "release_date": "2017-10-06",
+    "vote_average": 7.5,
+    "genre": "SF",
+    "overview": "A new blade runner uncovers a hidden truth that may change society and sends him searching for a missing legend.",
+    "poster": "images/Blade Runner 2049.jpg"
+  },
+  {
+    "title": "Minority Report",
+    "release_date": "2002-06-21",
+    "vote_average": 7.4,
+    "genre": "SF",
+    "overview": "A police officer who stops crimes before they happen becomes a suspect after being accused of a future murder.",
+    "poster": "images/Minority Report.jpg"
+  },
+  {
+    "title": "Looper",
+    "release_date": "2012-09-28",
+    "vote_average": 7.0,
+    "genre": "SF",
+    "overview": "A hitman who eliminates targets sent from the future faces an impossible mission when his next target is his older self.",
+    "poster": "images/Looper.jpg"
+  },
+  {
+    "title": "Oblivion",
+    "release_date": "2013-04-19",
+    "vote_average": 6.6,
+    "genre": "SF",
+    "overview": "A drone repair technician on a ruined Earth begins to question his mission after rescuing a mysterious woman.",
+    "poster": "images/Oblivion.jpg"
+  },
+  {
+    "title": "Elysium",
+    "release_date": "2013-08-09",
+    "vote_average": 6.5,
+    "genre": "SF",
+    "overview": "In a future divided by class, a man takes on a mission that could bring equality between Earth and a luxurious space station.",
+    "poster": "images/Elysium.jpg"
+  },
+  {
+    "title": "Source Code",
+    "release_date": "2011-04-01",
+    "vote_average": 7.3,
+    "genre": "SF",
+    "overview": "A soldier repeatedly relives the final minutes before a train explosion in order to find the bomber.",
+    "poster": "images/Source Code.jpg"
+  },
+  {
+    "title": "Moon",
+    "release_date": "2009-06-12",
+    "vote_average": 7.6,
+    "genre": "SF",
+    "overview": "A lone worker on a lunar base nears the end of his contract and uncovers a disturbing truth about his mission and identity.",
+    "poster": "images/Moon.jpg"
+  },
+  {
+    "title": "Passengers",
+    "release_date": "2016-12-21",
+    "vote_average": 6.9,
+    "genre": "SF",
+    "overview": "Two passengers wake up too early on a long space journey and must decide how to live with an irreversible mistake.",
+    "poster": "images/Passengers.jpg"
+  },
+  {
+    "title": "Tenet",
+    "release_date": "2020-08-26",
+    "vote_average": 7.3,
+    "genre": "SF",
+    "overview": "An agent working to prevent global catastrophe enters a world where time itself can move in reverse.",
+    "poster": "images/Tenet.jpg"
+  },
+  {
+    "title": "Dune",
+    "release_date": "2021-10-22",
+    "vote_average": 8.0,
+    "genre": "SF",
+    "overview": "A young nobleman is thrust into a dangerous struggle over the most valuable resource in the universe on a harsh desert planet.",
+    "poster": "images/Dune.jpg"
+  },
+  {
+    "title": "Ex Machina",
+    "release_date": "2015-04-24",
+    "vote_average": 7.6,
+    "genre": "SF",
+    "overview": "A programmer is invited to test a humanoid AI and becomes trapped in a tense psychological experiment.",
+    "poster": "images/Ex Machina.jpg"
+  }
+]
